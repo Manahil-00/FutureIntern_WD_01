@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap");
+
+:root {
+  --primary-color: #d7cb20;
+  --primary-color-dark: #c5b910;
+  --secondary-color: #1eaaaa;
+  --text-dark: #143563;
+  --extra-light: #f5eded;
+
+  --max-width: 600px;
+  --container-padding: 2rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: row;
+  padding: var(--container-padding);
+}
+
+.container__left,
+.container__right {
+  flex: 1;
+  position: relative;
+}
+
+.ribbon__white {
+  position: absolute;
+  height: 100%;
+  width: 95%;
+  top: 0;
+  right: 2rem;
+  text-align: center;
+  background-color: var(--extra-light);
+}
+
+.ribbon__white h1 {
+  padding: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.ribbon__white h1 span {
+  color: var(--primary-color);
+}
+
+.profile-img {
+  position: absolute;
+  bottom: 10px;
+  right: calc(4rem + 30px);
+  width: auto;
+  max-width: 100%;
+  height: 400px;
+}
+
+.container__right {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navbar {
+  padding: 2.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.navbar span {
+  padding: 0.5rem;
+  color: var(--extra-light);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar span:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.navbar .join {
+  width: 80px;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 5rem;
+  background-color: var(--primary-color);
+  color: var(--extra-light) !important;
+  transition: 0.3s;
+}
+
+.navbar .join:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.content {
+  max-width: var(--max-width);
+  display: grid;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.content h1 {
+  color: var(--extra-light);
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+.content h1 span {
+  color: var(--primary-color);
+}
+
+.content p {
+  color: var(--extra-light);
+}
+
+.carousel {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel .slide {
+  flex: 1;
+  height: 125px;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.carousel .slide .slide__image {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+
+.carousel .slide:hover .slide__image {
+  transform: scale(1.1);
+}
+
+.carousel .slide:nth-child(1) .slide__image {
+  background-image: url("assets/pic 2.jpeg");
+}
+
+.carousel .slide:nth-child(2) .slide__image {
+  background-image: url("assets/pic 3.jpeg");
+}
+
+.carousel .slide:nth-child(3) .slide__image {
+  background-image: url("assets/images.jpeg");
+}
+
+/* Media Queries for Tablet and Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .ribbon__white {
+    position: relative;
+    width: 100%;
+    right: 0;
+  }
+
+  .navbar {
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .navbar span {
+    font-size: 0.875rem;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .profile-img {
+    width: 100%;
+    height: auto;
+    right: 0;
+    bottom: 0;
+    position: relative;
+    margin-top: 1rem;
+  }
+
+  .carousel {
+    margin-top: 2rem;
+  }
+
+  .carousel .slide {
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .navbar span {
+    font-size: 0.75rem;
+  }
+
+  .carousel .slide {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .navbar span {
+    font-size: 0.75rem;
+  }
+
+  .content h1 {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+
+  .carousel .slide {
+    height: 60px;
+  }
+}
